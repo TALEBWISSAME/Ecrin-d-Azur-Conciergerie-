@@ -1,0 +1,30 @@
+.photo-credit {
+  background: var(--color-ivoire);
+  color: var(--color-bleu);
+  border-bottom: 1px solid var(--color-sable);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.photo-credit-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.photo-credit a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-sauge);
+  text-underline-offset: 3px;
+}
+
+.photo-credit a:hover { text-decoration-color: currentColor; }
+.photo-credit a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+@media (min-width: 64rem) {
+  .photo-credit-inner { padding-inline: 3rem; }
+}

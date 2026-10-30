@@ -1,0 +1,27 @@
+.nice-page { background: var(--color-ivoire); color: var(--color-bleu); }
+.nice-page-inner { width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: 1.5rem; }
+.nice-page-presentation { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.nice-page h2 { margin: 0; font-family: var(--font-heading); font-size: clamp(2.125rem, 1.5rem + 2.2vw, 3.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; }
+.nice-page p { font-family: var(--font-body); }
+.nice-page-presentation p { margin: 0; font-size: 0.9375rem; line-height: 1.95; }
+.nice-page-services { padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.nice-page-services > h2 { max-width: 24ch; }
+.nice-page-services-intro { max-width: 45rem; margin: 1.5rem 0 0; font-size: 0.9375rem; line-height: 1.85; }
+.nice-page-services-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+.nice-page-services-grid li { min-width: 0; border-top: 1px solid var(--color-sable); padding-top: 1.5rem; }
+.nice-page-service-number { display: block; margin-bottom: 1rem; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.1em; color: #796445; }
+.nice-page-services-grid h3 { margin: 0 0 1rem; font-family: var(--font-heading); font-size: clamp(1.75rem, 2.6vw, 2.5rem); font-weight: 500; line-height: 1.2; }
+.nice-page-services-grid p { margin: 0; font-size: 0.875rem; line-height: 1.9; }
+.nice-page-contact { padding-block: clamp(3.5rem, 7vw, 6rem); background: var(--color-bleu); color: var(--color-ivoire); text-align: center; }
+.nice-page-contact h2 { max-width: 26ch; margin-inline: auto; }
+.nice-page-contact p { max-width: 42rem; margin: 1.5rem auto 0; font-size: 0.9375rem; line-height: 1.85; }
+.nice-page-contact-button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.5rem; max-width: 100%; margin-top: 2rem; padding: 1rem 1.75rem; background: var(--color-sable); color: var(--color-bleu); font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; text-align: center; }
+.nice-page-contact-button:hover { background: var(--color-ivoire); }
+.nice-page-contact-button:focus-visible { outline: 2px solid var(--color-ivoire); outline-offset: 5px; }
+@media (min-width: 40rem) {
+  .nice-page-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+}
+@media (min-width: 64rem) {
+  .nice-page-inner { padding-inline: 3rem; }
+  .nice-page-presentation { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; align-items: start; }
+}

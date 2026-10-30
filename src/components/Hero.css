@@ -1,0 +1,140 @@
+.hero-riviera {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(36rem, 78svh, 54rem);
+  color: var(--color-ivoire);
+  background:
+    radial-gradient(ellipse at 90% 15%, #81978a66, transparent 65%),
+    linear-gradient(120deg, #1b3038, var(--color-bleu) 60%, #405b62);
+}
+
+.hero-riviera-media,
+.hero-riviera::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-riviera-media { overflow: hidden; }
+
+.hero-riviera-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 65%;
+}
+
+.hero-riviera::after {
+  content: "";
+  background: linear-gradient(90deg, #263f49f5 0%, #263f49e6 38%, #263f49b3 65%, #263f4959 100%);
+}
+
+.hero-riviera-inner {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: clamp(4rem, 8vw, 7.5rem) 1.5rem;
+}
+
+.hero-riviera-content { max-width: 48rem; }
+
+.hero-riviera-eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--color-sable);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-riviera-title {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 1.65rem + 4.4vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  overflow-wrap: break-word;
+  animation-delay: 80ms;
+}
+
+.hero-riviera-description {
+  max-width: 39rem;
+  margin: 1.75rem 0 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.85;
+  animation-delay: 160ms;
+}
+
+.hero-riviera-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  animation-delay: 240ms;
+}
+
+.hero-riviera-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.hero-riviera-button-primary {
+  color: var(--color-bleu);
+  background: var(--color-sable);
+  border-color: var(--color-sable);
+}
+
+.hero-riviera-button-primary:hover { background: var(--color-ivoire); border-color: var(--color-ivoire); }
+
+.hero-riviera-button-secondary {
+  color: var(--color-ivoire);
+  border-color: #f6f2e9b3;
+  background: #263f4966;
+}
+
+.hero-riviera-button-secondary:hover { background: var(--color-bleu); border-color: var(--color-ivoire); }
+.hero-riviera-button:focus-visible { outline: 2px solid var(--color-ivoire); outline-offset: 5px; }
+
+.hero-riviera-enter { animation-name: hero-riviera-appear; animation-duration: 650ms; animation-timing-function: ease-out; animation-fill-mode: backwards; }
+
+@keyframes hero-riviera-appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 64rem) {
+  .hero-riviera-inner { padding-inline: 3rem; }
+}
+
+@media (max-width: 39.999rem) {
+  .hero-riviera-media img { object-position: 70% center; }
+  .hero-riviera { min-height: 36rem; }
+  .hero-riviera::after { background: linear-gradient(180deg, #263f49e6, #263f49d9 60%, #263f49f5); }
+  .hero-riviera-eyebrow { letter-spacing: 0.14em; }
+  .hero-riviera-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; margin-top: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-riviera-enter { animation: none; }
+  .hero-riviera-button { transition: none; }
+}

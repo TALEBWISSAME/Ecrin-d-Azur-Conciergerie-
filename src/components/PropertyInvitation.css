@@ -1,0 +1,110 @@
+.property-invitation {
+  background: var(--color-ivoire);
+  color: var(--color-bleu);
+  padding-block: clamp(3rem, 6vw, 6rem);
+}
+
+.property-invitation-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.property-invitation-content, .property-invitation-visual { min-width: 0; }
+
+.property-invitation-eyebrow {
+  margin: 0 0 1.25rem;
+  color: #796445;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+}
+
+.property-invitation-heading {
+  max-width: 20ch;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 1.5rem + 2.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.property-invitation-description {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.property-invitation-project { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--color-sable); }
+
+.property-invitation-subheading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 1.3rem + 1vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.property-invitation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  max-width: 100%;
+  margin-top: 1.75rem;
+  padding: 1rem 1.75rem;
+  background: var(--color-bleu);
+  color: var(--color-ivoire);
+  border: 1px solid var(--color-bleu);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.property-invitation-button:hover { background: var(--color-sable); color: var(--color-bleu); }
+.property-invitation-button:focus-visible { outline: 2px solid var(--color-bleu); outline-offset: 5px; }
+.property-invitation-visual { display: flex; flex-direction: column; margin: 0; }
+
+.property-invitation-image {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-sable), var(--color-ivoire));
+}
+
+.property-invitation-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% center; }
+
+@media (hover: hover) and (pointer: fine) {
+  .property-invitation-image img { transition: transform 650ms ease; }
+  .property-invitation-image:hover img { transform: scale(1.05); }
+}
+.property-invitation-placeholder { display: grid; height: 100%; min-height: 18rem; place-items: center; padding: 2rem; font-family: var(--font-heading); font-size: 1.75rem; text-align: center; }
+.property-invitation-disclaimer { margin: 0.875rem 0 0; font-family: var(--font-body); font-size: 0.75rem; line-height: 1.8; }
+
+/* Scoped credit spacing preserves the existing credit below the Hero. */
+.property-invitation-visual .photo-credit { border: 0; background: transparent; font-size: 11px; }
+.property-invitation-visual .photo-credit-inner { padding: 0.5rem 0 0; }
+
+@media (min-width: 64rem) {
+  .property-invitation-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 5vw, 5rem); padding-inline: 3rem; }
+  .property-invitation-image { aspect-ratio: auto; min-height: 35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .property-invitation-button { transition: none; }
+  .property-invitation-image img { transition: none; }
+  .property-invitation-image:hover img { transform: none; }
+}

@@ -1,0 +1,21 @@
+.destination-page { color: var(--color-bleu); }
+.destination-page-header { max-width: 54rem; margin-bottom: 2.5rem; }
+.destination-page-eyebrow { margin: 0 0 1rem; color: #796445; font-family: var(--font-body); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.16em; }
+.destination-page-introduction { margin-top: 1.5rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.85; }
+.destination-page-cover { margin: 0; }
+.destination-page-image { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--color-sable); }
+.destination-page-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.destination-page-placeholder { display: grid; height: 100%; place-items: center; padding: 1.5rem; font-family: var(--font-heading); font-size: 1.75rem; text-align: center; }
+.destination-page-cover .photo-credit-inner { padding-inline: 0; }
+.destination-page-services, .destination-page-contact { margin-top: 3.5rem; max-width: 54rem; }
+.destination-page-services h2, .destination-page-contact h2 { margin: 0 0 1rem; }
+.destination-page-services p, .destination-page-contact p { font-family: var(--font-body); line-height: 1.85; }
+.destination-page-services ul { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-top: 1.5rem; padding: 0; list-style: none; }
+.destination-page-services li { padding-top: 1rem; border-top: 1px solid var(--color-sable); font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500; }
+.destination-page-button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.5rem; margin-top: 1.5rem; padding: 1rem 1.75rem; background: var(--color-bleu); color: var(--color-ivoire); font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; text-align: center; }
+.destination-page-button:hover { background: var(--color-sable); color: var(--color-bleu); }
+.destination-page-button:focus-visible { outline: 2px solid var(--color-bleu); outline-offset: 5px; }
+@media (min-width: 40rem) {
+  .destination-page-image { aspect-ratio: 21 / 9; }
+  .destination-page-services ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

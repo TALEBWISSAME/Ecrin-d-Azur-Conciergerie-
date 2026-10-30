@@ -1,0 +1,175 @@
+﻿@import "tailwindcss";
+
+@import "./styles/fonts.css";
+
+@theme {
+  --font-heading: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-nav: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --color-bleu: #263F49;
+  --color-sable: #D5C1A3;
+  --color-ivoire: #F6F2E9;
+  --color-sauge: #81978A;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-body);
+    color: var(--color-bleu);
+    background: var(--color-ivoire);
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 1.75rem + 4vw, 4.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+    line-height: 1.25;
+  }
+
+  p { line-height: 1.75; }
+  button, input, select, textarea { font-family: var(--font-body); }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+}
+
+@layer utilities {
+  .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+  }
+
+  .brand-monogram { width: 48px; height: 60px; flex-shrink: 0; }
+  .brand-wordmark { display: flex; flex-direction: column; gap: 3px; }
+  .brand-eyebrow, .brand-location {
+    font-family: var(--font-nav);
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.5;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .brand-eyebrow { color: var(--color-bleu); }
+  .brand-location { color: #796445; font-size: 7px; letter-spacing: 0.1em; }
+  .brand-name {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 40rem) {
+    .brand-logo { gap: 14px; }
+    .brand-monogram { width: 70px; height: 84px; }
+    .brand-wordmark { gap: 6px; }
+    .brand-eyebrow { font-size: 10px; letter-spacing: 0.2em; }
+    .brand-name { font-size: 40px; }
+    .brand-location { font-size: 9px; letter-spacing: 0.12em; }
+  }
+
+  .menu-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 10px;
+    font-family: var(--font-nav);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: normal;
+    white-space: nowrap;
+  }
+
+  .menu-link-label {
+    position: relative;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 250ms ease;
+  }
+
+  .menu-link:focus-visible .menu-link-label { transform: scale(1.06); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .menu-link:hover .menu-link-label { transform: scale(1.06); }
+  }
+
+  .menu-link-label::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-sable);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease;
+  }
+
+  .menu-link:hover .menu-link-label::after,
+  .menu-link:focus-visible .menu-link-label::after,
+  .menu-link[aria-current="page"] .menu-link-label::after {
+    transform: scaleX(1);
+  }
+
+  .menu-cta {
+    padding: 12px 20px;
+    background: var(--color-bleu);
+    color: var(--color-ivoire);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .menu-cta-label::after { background: var(--color-ivoire); }
+
+  @media (min-width: 80rem) {
+    .menu-link { font-size: 14px; }
+    .menu-cta { font-size: 13px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-link-label, .menu-link-label::after { transition: none; }
+    .menu-link:hover .menu-link-label,
+    .menu-link:focus-visible .menu-link-label { transform: none; }
+  }
+
+  .text-intro {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+}
